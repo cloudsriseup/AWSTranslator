@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Console Recorder for AWS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <link href="pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+    <link class="main-stylesheet" href="pages/css/pages.css" rel="stylesheet" type="text/css" />
+
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+
+    <link rel="stylesheet" href="lib/codemirror/theme/3024-day.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/3024-night.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/abcdef.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/ambiance-mobile.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/ambiance.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/base16-dark.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/base16-light.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/bespin.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/blackboard.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/cobalt.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/colorforth.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/darcula.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/dracula.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/duotone-dark.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/duotone-light.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/eclipse.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/elegant.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/erlang-dark.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/gruvbox-dark.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/hopscotch.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/icecoder.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/idea.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/isotope.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/lesser-dark.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/liquibyte.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/lucario.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/material.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/mbo.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/mdn-like.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/midnight.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/monokai.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/neat.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/neo.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/night.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/oceanic-next.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/panda-syntax.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/paraiso-dark.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/paraiso-light.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/pastel-on-dark.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/railscasts.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/rubyblue.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/seti.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/shadowfox.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/solarized.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/ssms.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/the-matrix.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/tomorrow-night-bright.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/ttcn.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/twilight.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/vibrant-ink.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/xq-dark.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/xq-light.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/yeti.css">
+    <link rel="stylesheet" href="lib/codemirror/theme/zenburn.css">
+
+    <link rel="stylesheet" href="main.css">
+    <script src="lib/codemirror/codemirror.js"></script>
+    <script src="lib/codemirror/mode/python/python.js"></script>
+    <script src="lib/codemirror/mode/shell/shell.js"></script>
+    <script src="lib/codemirror/mode/go/go.js"></script>
+    <script src="lib/codemirror/mode/javascript/javascript.js"></script>
+    <script src="lib/codemirror/mode/yaml/yaml.js"></script>
+    <script src="lib/codemirror/mode/ruby/ruby.js"></script>
+  </head>
+  <body class="horizontal-menu horizontal-app-menu ">
+    <div class="header">
+      <div class="container">
+        <div class="header-inner justify-content-start header-lg-height title-bar">
+          <div class="brand inline align-self-end">
+            <img src="icon.png" alt="logo" data-src="icon.png" data-src-retina="icon.png" width="36" height="36">
+          </div>
+          <h2 class="page-title align-self-end" style="line-height: 36px;">
+                Console Recorder for AWS
+              </h2>
+        </div>
+      </div>
+    </div>
+    <div class="page-container ">
+      <div class="page-content-wrapper ">
+        <div class="content ">
+          <div class="jumbotron">
+            <div class=" container p-l-0 p-r-0 container-fixed-lg sm-p-l-0 sm-p-r-0">
+              <div class="inner" style="padding-bottom: 10px; display: flex; flex-wrap: wrap; justify-content: flex-start;">
+                <button id="boto3_menubtn" class="btn btn-primary m-t-10" style="min-width: 146px; margin-left: 1px; margin-right: 1px;"><span class="bold">Boto3 (Python)</span></button>
+                <button id="cfn_menubtn" class="btn btn-default m-t-10" style="min-width: 146px; margin-left: 1px; margin-right: 1px;"><span class="bold">CloudFormation</span></button>
+                <button id="tf_menubtn" class="btn btn-default m-t-10" style="min-width: 146px; margin-left: 1px; margin-right: 1px;"><span class="bold">Terraform</span></button>
+                <button id="troposphere_menubtn" class="btn btn-default m-t-10" style="min-width: 146px; margin-left: 1px; margin-right: 1px;"><span class="bold">Troposphere</span></button>
+                <button id="cdkts_menubtn" class="btn btn-default m-t-10" style="min-width: 146px; margin-left: 1px; margin-right: 1px;"><span class="bold">CDK (TS)</span></button>
+                <button id="cli_menubtn" class="btn btn-default m-t-10" style="min-width: 146px; margin-left: 1px; margin-right: 1px;"><span class="bold">AWS CLI</span></button>
+                <button id="iam_menubtn" class="btn btn-default m-t-10" style="min-width: 146px; margin-left: 1px; margin-right: 1px;"><span class="bold">IAM</span></button>
+                <button id="js_menubtn" class="btn btn-default m-t-10" style="min-width: 146px; margin-left: 1px; margin-right: 1px;"><span class="bold">JavaScript</span></button>
+                <button id="go_menubtn" class="btn btn-default m-t-10" style="min-width: 146px; margin-left: 1px; margin-right: 1px;"><span class="bold">Go SDK (v1)</span></button>
+                <button id="settings_menubtn" class="btn btn-default m-t-10" style="min-width: 146px; margin-left: 1px; margin-right: 1px;"><i class="fa fa-cogs"></i> <span class="bold">Settings</span></button>
+              </div>
+            </div>
+          </div>
+          <div class=" container container-fixed-lg">
+            <div id='boto3_container'>
+                <!--<button id="copy_boto3" style="z-index: 100; position: absolute; right: 180px; top: 100px;" type="button" class="btn btn-default active"><i class="fa fa-copy"></i></button>-->
+                <textarea id='boto3'></textarea>
+            </div>
+            <div id='cli_container' style="display: none;">
+                <textarea id='cli'></textarea>
+            </div>
+            <div id='go_container' style="display: none;">
+                <textarea id='go'></textarea>
+            </div>
+            <div id='cfn_container' style="display: none;">
+                <textarea id='cfn'></textarea>
+            </div>
+            <div id='tf_container' style="display: none;">
+                <textarea id='tf'></textarea>
+            </div>
+            <div id='js_container' style="display: none;">
+                <textarea id='js'></textarea>
+            </div>
+            <div id='cdkts_container' style="display: none;">
+                <textarea id='cdkts'></textarea>
+            </div>
+            <div id='iam_container' style="display: none;">
+                <textarea id='iam'></textarea>
+            </div>
+            <div id='troposphere_container' style="display: none;">
+                <textarea id='troposphere'></textarea>
+            </div>
+            <div id='settings_container' style="display: none;">
+              <div class="card card-default">
+                <div class="card-header ">
+                    <h4><span class="semi-bold">Settings</span></h4>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <h5>Block Mutable Requests</h5>
+                      <div class="checkbox check-primary" style="margin-top: 24px; margin-bottom: 24px;">
+                        <input type="checkbox" value="0" id="blocking">
+                        <label for="blocking"><span class="bold">Enable</span></label>
+                      </div>
+                      <p>This option will stop any mutable requests (most things that aren't a <code>Get*</code> or <code>List*</code> action) from executing in the console, whilst still logging the generated outputs in the dashboard.</p>   
+                    </div>
+                    <div class="col-lg-4">
+                      <h5>Intercept Responses</h5>
+                      <div class="checkbox check-primary" style="margin-top: 24px; margin-bottom: 24px;">
+                        <input type="checkbox" value="0" id="intercept">
+                        <label for="intercept"><span class="bold">Enable</span></label>
+                      </div>
+                      <p>This option will record the response body from all AWS calls. Setting this allows CloudFormation, CDK, Troposphere and Terraform to correlate actions between resources.</p>
+                    </div>
+                    <div class="col-lg-4">
+                      <h5>Recorded Data</h5>
+                      <button id="cleardata_btn" class="btn btn-danger m-t-10" style="width: 182px; margin-bottom: 13px;"><span class="bold">Clear Recorded Data</span></button>
+                      <p>Clicking the button above will clear all stored recordings and their outputs.</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <h5>Theme</h5>
+                      <form role="form" style="margin-top: 24px; margin-bottom: 24px;">
+                          <div class="form-group ">
+                          <select id="theme" class="full-width" data-init-plugin="select2">
+                              <option value="3024-day">3024-day</option>
+                              <option value="3024-night">3024-night</option>
+                              <option value="abcdef">abcdef</option>
+                              <option value="ambiance">ambiance</option>
+                              <option value="base16-dark">base16-dark</option>
+                              <option value="base16-light">base16-light</option>
+                              <option value="bespin">bespin</option>
+                              <option value="blackboard">blackboard</option>
+                              <option value="cobalt">cobalt</option>
+                              <option value="colorforth">colorforth</option>
+                              <option value="darcula">darcula</option>
+                              <option value="dracula">dracula</option>
+                              <option value="duotone-dark">duotone-dark</option>
+                              <option value="duotone-light">duotone-light</option>
+                              <option value="eclipse">eclipse</option>
+                              <option value="elegant">elegant</option>
+                              <option value="erlang-dark">erlang-dark</option>
+                              <option value="gruvbox-dark">gruvbox-dark</option>
+                              <option value="hopscotch">hopscotch</option>
+                              <option value="icecoder">icecoder</option>
+                              <option value="idea">idea</option>
+                              <option value="isotope">isotope</option>
+                              <option value="lesser-dark">lesser-dark</option>
+                              <option value="liquibyte">liquibyte</option>
+                              <option value="lucario">lucario</option>
+                              <option value="material">material</option>
+                              <option value="mbo">mbo</option>
+                              <option value="mdn-like">mdn-like</option>
+                              <option value="midnight">midnight</option>
+                              <option value="monokai">monokai</option>
+                              <option value="neat">neat</option>
+                              <option value="neo">neo</option>
+                              <option value="night">night</option>
+                              <option value="oceanic-next">oceanic-next</option>
+                              <option value="panda-syntax">panda-syntax</option>
+                              <option value="paraiso-dark">paraiso-dark</option>
+                              <option value="paraiso-light">paraiso-light</option>
+                              <option value="pastel-on-dark">pastel-on-dark</option>
+                              <option value="railscasts">railscasts</option>
+                              <option value="rubyblue">rubyblue</option>
+                              <option value="seti">seti</option>
+                              <option value="shadowfox">shadowfox</option>
+                              <option value="solarized dark">solarized dark</option>
+                              <option value="solarized light">solarized light</option>
+                              <option value="the-matrix">the-matrix</option>
+                              <option value="tomorrow-night-bright">tomorrow-night-bright</option>
+                              <option value="tomorrow-night-eighties">tomorrow-night-eighties</option>
+                              <option value="ttcn">ttcn</option>
+                              <option value="twilight">twilight</option>
+                              <option value="vibrant-ink">vibrant-ink</option>
+                              <option value="xq-dark">xq-dark</option>
+                              <option value="xq-light">xq-light</option>
+                              <option value="yeti">yeti</option>
+                              <option value="zenburn">zenburn</option>
+                          </select>
+                          </div>
+                      </form>
+                      <p>You can change the theme of the code blocks using this option.</p>
+                    </div>
+                    <div class="col-lg-8">
+                      &nbsp;
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <a style="float: right;" href="https://github.com/iann0036/AWSConsoleRecorder/issues" target="_blank">Report a bug or issue</a>
+          </div>
+          <br /><br />
+        </div>
+      </div>
+    </div>
+    <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/popper/umd/popper.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery/jquery-easy.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-ios-list/jquery.ioslist.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-actual/jquery.actual.min.js"></script>
+    <script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="assets/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+    <script src="pages/js/pages.js" type="text/javascript"></script>
+    <script src="assets/js/scripts.js" type="text/javascript"></script>
+    <script src="main.js" type="text/javascript"></script>
+  </body>
+</html>
