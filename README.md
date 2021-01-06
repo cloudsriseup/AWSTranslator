@@ -1,4 +1,4 @@
-> Records actions made in the AWS Management Console and outputs the equivalent CLI/SDK commands and CloudFormation/Terraform templates.
+> Record actions made in the AWS Management Console and outputs the equivalent CLI/SDK commands and CloudFormation/Terraform templates.
 
 
 ![Screenshot](assets/screen1.png)
